@@ -32,17 +32,22 @@ brew upgrade
 #brew install homebrew/dupes/vim
 #brew install homebrew/dupes/screen
 
+# Add homebrew/dupes to take advantage of homebrew packages that replace the Mac built-ins
+brew install homebrew/dupes
+
 # Install other useful binaries
+
+brew install git
+brew install mercurial
+brew install node
+brew install tree
 #brew install ack
 #brew install exiv2
-brew install git
 #brew install imagemagick
 #brew install lynx
-brew install node
 #brew install pigz
 #brew install rename
 #brew install rhino
-brew install tree
 #brew install webkit2png
 #brew install zopfli
 
@@ -50,6 +55,8 @@ brew install tree
 #brew install lua52
 
 # Install native apps
+
+# Install Homebrew Cask https://github.com/phinze/homebrew-cask
 brew tap phinze/homebrew-cask
 brew install brew-cask
 
@@ -57,21 +64,41 @@ function installcask() {
 	brew cask install "${@}" 2> /dev/null
 }
 
+installcask alfred
+installcask cinch
+installcask cloudapp
 installcask dropbox
+installcask firefox
+installcask google-app-engine-launcher
 installcask google-chrome
-installcask google-chrome-canary
-#installcask imagealpha
+installcask google-drive
+installcask google-music-manager
+installcask google-notifier
+installcask growler
+installcask growlnotify
 installcask imageoptim
 installcask iterm2
-#installcask macvim
-#installcask miro-video-converter
+installcask limechat
+installcask mesasqlite
+installcask netbeans
+installcask opera
+installcask sequel-pro
+installcask skitch
+installcask skype
 installcask sublime-text
-#installcask the-unarchiver
-#installcask tor-browser
-#installcask transmission
-#installcask ukelele
+installcask teamspeak-client
+installcask transmission
+installcask tvshows
+installcask unrarx
 installcask virtualbox
 installcask vlc
+#installcask google-chrome-canary
+#installcask ukelele
+#installcask the-unarchiver
+#installcask tor-browser
+#installcask macvim
+#installcask miro-video-converter
+#installcask imagealpha
 
 # Remove outdated versions from the cellar
 brew cleanup

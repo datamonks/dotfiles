@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # ~/.osx — http://sow.so/osx
+# This is an OSX config file that is to be run once on a new machine
 
 # Ask for the administrator password upfront
 sudo -v
