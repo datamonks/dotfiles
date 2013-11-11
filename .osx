@@ -504,10 +504,14 @@ sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Use a Solarized Dark by default in Terminal.app https://github.com/tomislav/osx-terminal.app-colors-solarized
-open "$HOME/init/SolarizedDark.terminal"
-sleep 1 # Wait a bit to make sure the theme is loaded
-defaults write com.apple.terminal "Default Window Settings" -string "SolarizedDark"
-defaults write com.apple.terminal "Startup Window Settings" -string "SolarizedDark"
+# open "$HOME/init/SolarizedDark.terminal"
+# sleep 1 # Wait a bit to make sure the theme is loaded
+# defaults write com.apple.terminal "Default Window Settings" -string "SolarizedDark"
+# defaults write com.apple.terminal "Startup Window Settings" -string "SolarizedDark"
+
+# Set default Terminal style to Homebrew
+defaults write com.apple.terminal "Default Window Settings" Homebrew
+defaults write com.apple.terminal "Startup Window Settings" Homebrew
 
 # Enable “focus follows mouse” for Terminal.app and all X11 apps
 # i.e. hover over a window and start typing in it without clicking first

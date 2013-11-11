@@ -33,7 +33,7 @@ brew upgrade
 #brew install homebrew/dupes/screen
 
 # Add homebrew/dupes to take advantage of homebrew packages that replace the Mac built-ins
-brew install homebrew/dupes
+# brew install homebrew/dupes
 
 # Install other useful binaries
 
@@ -80,13 +80,10 @@ installcask imageoptim
 installcask iterm2
 installcask limechat
 installcask mesasqlite
-installcask netbeans
-installcask opera
 installcask sequel-pro
 installcask skitch
 installcask skype
 installcask sublime-text
-installcask teamspeak-client
 installcask transmission
 installcask tvshows
 installcask unrarx
