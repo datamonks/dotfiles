@@ -10,7 +10,7 @@ done
 unset file
 
 # init z https://github.com/rupa/z
-. ~/z/z.sh
+# . ~/z/z.sh
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
@@ -43,3 +43,12 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # http://stackoverflow.com/questions/13804382/how-to-automatically-run-bin-bash-login-automatically-in-the-embeded-termin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# rbenv install
+# http://blog.55minutes.com/2013/09/rails-os-x-install-guide/
+export RBENV_ROOT="$HOME/.rbenv"
+
+if [ -d $RBENV_ROOT ]; then
+  export PATH="$RBENV_ROOT/bin:$PATH"
+  eval "$(rbenv init -)"
+fi

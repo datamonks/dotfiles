@@ -5,11 +5,21 @@
 # the `push` command which copies the github compare URL to my clipboard is heaven
 #sudo bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
 
+########################################################
+# Commenting out RVM install / Planning on using rbenv #
+########################################################
 # https://rvm.io
 # rvm for the rubiess
 #Paul does: curl -L https://get.rvm.io | bash -s stable --ruby
 #I do this one as it adds dependencies as well
-\curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enable
+#\curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enable
+
+# rbenv install
+# http://blog.55minutes.com/2013/09/rails-os-x-install-guide/
+curl https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
+# add bundler / rubygems-bundler as default gems in rbenv
+echo bundler >> ~/.rbenv/default-gems
+echo rubygems-bundler >> ~/.rbenv/default-gems
 
 # https://github.com/isaacs/nave
 # needs npm, obviously.
@@ -17,17 +27,11 @@
 #npm install -g nave
 
 
-# homebrew!
-# you need the code CLI tools YOU FOOL.
-#ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
-
-
-
 # https://github.com/rupa/z
 # z, oh how i love you
-cd
-git clone https://github.com/rupa/z.git
-chmod +x ~/z/z.sh
+# cd
+# git clone https://github.com/rupa/z.git
+# chmod +x ~/z/z.sh
 # also consider moving over your current .z file if possible. it's painful to rebuild :)
 
 # z binary is already referenced from .bash_profile
@@ -60,11 +64,18 @@ chmod +x ~/z/z.sh
 # chrome canary as default
 # on a mac you can set chrome canary as your default inside of Safari preferences :)
 
-# My extra stuff (do I need sudo here?)
+# My extra stuff
 # Check gems are up to date without installing documentation
-sudo gem update --system --no-document
+gem update --system --no-document
 # Install jekyll
-sudo gem install jekyll
+gem install jekyll
 
 # Set symlink for Sublime Text 2
+# [This hasn't been tested, but should work]
+# Enable subl command line tool (for Sublime Text 2)
+# First check for existance of ~/bin folder, if !exists create it
+if [ ! -d "~/bin" ]; then
+  mkdir ~/bin
+fi
+# then create symbolic link
 ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
