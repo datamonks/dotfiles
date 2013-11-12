@@ -6,3 +6,10 @@ git config --global user.name "$GIT_AUTHOR_NAME"
 GIT_AUTHOR_EMAIL="kristinpeterson@me.com"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
+
+# HG credentials
+echo 'username = kristinpeterson <kristinpeterson@me.com>' >> ~/.hgrc
+echo '' >> ~/.hgrc
+echo '[paths]' >> ~/.hgrc
+echo 'kp = ssh://hg@bitbucket.org/kristinpeterson/kristinpeterson.me' >> ~/.hgrc
+echo 'catper = ssh://hg@bitbucket.org/kristinpeterson/catper' >> ~/.hgrc

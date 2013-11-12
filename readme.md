@@ -51,14 +51,21 @@ If `~/.extra` exists, it will be sourced along with the other files. You can use
 My `~/.extra` looks something like this:
 
 ```bash
-# Git credentials
 # Not in the repository, to prevent people from accidentally committing under my name
+# Git credentials
 GIT_AUTHOR_NAME="kristinpeterson"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 git config --global user.name "$GIT_AUTHOR_NAME"
 GIT_AUTHOR_EMAIL="kristinpeterson@example.com"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
+
+# Mercurial credentials & paths (get appended to ~/.hgrc)
+echo 'username = kristinpeterson <kristinpeterson@me.com>' >> ~/.hgrc
+echo '' >> ~/.hgrc
+echo '[paths]' >> ~/.hgrc
+echo 'remote1 = ssh://hg@bitbucket.org/kristinpeterson/repo1' >> ~/.hgrc
+echo 'remote2 = ssh://hg@bitbucket.org/kristinpeterson/repo2' >> ~/.hgrc
 ```
 
 You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/mathiasbynens/dotfiles/fork) instead, though.
