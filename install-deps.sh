@@ -21,6 +21,14 @@ curl https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer
 echo bundler >> ~/.rbenv/default-gems
 echo rubygems-bundler >> ~/.rbenv/default-gems
 
+# PostgreSQL setup (installed via .brew)
+# initialize database
+initdb /usr/local/var/postgres -E utf8
+# configure PostgreSQL to run on startup
+mkdir -p ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+
 # https://github.com/isaacs/nave
 # needs npm, obviously.
 # TODO: I think i'd rather curl down the nave.sh, symlink it into /bin and use that for initial node install.

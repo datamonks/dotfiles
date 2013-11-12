@@ -41,9 +41,13 @@ brew install apple-gcc42	#rbenv install
 brew install autoconf		#rbenv install
 brew install git
 brew install mercurial
+brew install mysql
+# set mysql password after install with the following command (replace PASSWORD with your psw)
+# $(brew --prefix mysql)/bin/mysqladmin -u root PASSWORD
 brew install node
 brew install pkg-config		#rbenv install
 brew install postgresql
+brew install sqlite
 brew install tree
 #brew install ack
 #brew install exiv2
