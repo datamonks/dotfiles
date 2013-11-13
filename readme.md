@@ -70,9 +70,9 @@ echo 'remote2 = ssh://hg@bitbucket.org/kristinpeterson/repo2' >> ~/.hgrc
 
 You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/mathiasbynens/dotfiles/fork) instead, though.
 
-## Setting up a new Mac
+## Run the following 3 scripts before `boostrap.sh` when setting up a new Mac
 
-### Sensible OS X defaults
+### 1. Sensible OS X defaults
 
 When setting up a new Mac, you may want to set some sensible OS X defaults:
 
@@ -80,7 +80,7 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 ./.osx
 ```
 
-### Install Homebrew formulae
+### 2. Install Homebrew formulae
 
 Homebrew requires Xcode Command Line Tools, install Xcode & CLT before installing Homebrew. To install Xcode CLT on Maverics run this command after Xcode has been installed `xcode-select --install`. Then install [Homebrew](http://brew.sh/). `~/.brew` includes installation of useful binaries (git, mercurial, etc) as well as native apps with [`brew cask`](https://github.com/phinze/homebrew-cask):
 
@@ -88,7 +88,7 @@ Homebrew requires Xcode Command Line Tools, install Xcode & CLT before installin
 ./.brew
 ```
 
-### Install dependencies
+### 3. Install dependencies
 
 Install other dependencies (unrelated to brew).  May consider combining all dependency installs into one file...
 

@@ -5,14 +5,15 @@
 # the `push` command which copies the github compare URL to my clipboard is heaven
 #sudo bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
 
-########################################################
-# Commenting out RVM install / Planning on using rbenv #
-########################################################
-# https://rvm.io
+##########################################################################
+#         Commenting out RVM install / Planning on using rbenv           #
+##########################################################################
+# https://rvm.into
 # rvm for the rubiess
-#Paul does: curl -L https://get.rvm.io | bash -s stable --ruby
-#I do this one as it adds dependencies as well
-#\curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enable
+# Paul does: curl -L https://get.rvm.io | bash -s stable --ruby
+# I do this one as it adds dependencies as well
+# \curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enable
+#########################################################################
 
 # rbenv install
 # http://blog.55minutes.com/2013/09/rails-os-x-install-guide/
@@ -43,7 +44,6 @@ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 # also consider moving over your current .z file if possible. it's painful to rebuild :)
 
 # z binary is already referenced from .bash_profile
-
 
 # https://github.com/dronir/SpotifyControl
 # Spotify Controll Script
@@ -87,3 +87,21 @@ if [ ! -d "~/bin" ]; then
 fi
 # then create symbolic link
 ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+
+# create ~/.vim dir / subdirs, if !exists
+# ~/.vim
+if [ ! -d "~/.vim" ]; then
+	mkdir ~/.vim
+fi
+# ~/.vim/backups
+if [ ! -d "~/.vim" ]; then
+	mkdir ~/.vim/backups
+fi
+# ~/.vim/swaps
+if [ ! -d "~/.vim" ]; then
+	mkdir ~/.vim/swaps
+fi
+# ~/.vim/undo
+if [ ! -d "~/.vim" ]; then
+	mkdir ~/.vim/undo
+fi
