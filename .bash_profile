@@ -52,3 +52,6 @@ if [ -d $RBENV_ROOT ]; then
   export PATH="$RBENV_ROOT/bin:$PATH"
   eval "$(rbenv init -)"
 fi
+
+# for homebrew
+export PATH="/usr/local/bin:$PATH"

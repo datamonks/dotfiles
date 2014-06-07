@@ -38,6 +38,7 @@ brew upgrade
 # Install other useful binaries
 
 brew install apple-gcc42	#rbenv install
+brew install awscli
 brew install autoconf		#rbenv install
 brew install git
 brew install mercurial
@@ -81,9 +82,7 @@ installcask google-app-engine-launcher
 installcask google-chrome
 installcask google-drive
 installcask google-music-manager
-installcask google-notifier
 installcask growler
-installcask growlnotify
 installcask imageoptim
 installcask iterm2
 installcask limechat
