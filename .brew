@@ -104,5 +104,7 @@ installcask vlc
 #installcask miro-video-converter
 #installcask imagealpha
 
+sudo npm install --global gulp
+
 # Remove outdated versions from the cellar
 brew cleanup
