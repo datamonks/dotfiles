@@ -8,17 +8,24 @@ alias -- -="cd -"
 
 # Shortcuts
 alias d="cd ~/Dropbox"
+alias gd="cd ~/Google\ Drive"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-#alias p="cd ~/Projects"
-alias g="git"
+alias p="cd ~/Projects"
 alias h="history"
 alias j="jobs"
 alias v="vim"
+alias n="nano"
+alias s="subl ."
 #alias m="mate ."
 alias s="subl ."
 alias o="open"
 alias oo="open ."
+
+# git related shortcuts
+alias g="git"
+alias gadd="git add -A"
+alias gcam="git commit -a -m"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
