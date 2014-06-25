@@ -27,6 +27,10 @@ alias g="git"
 alias gadd="git add -A"
 alias gcam="git commit -a -m"
 
+# custom shortcuts
+alias imgtxt="python ~/Projects/PyCharm/img2sms/img2sms/main.py"
+alias dotfiles="source ~/Projects/dotfiles/bootstrap.sh"
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
