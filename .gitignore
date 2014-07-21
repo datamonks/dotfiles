@@ -1,3 +1,6 @@
+# Ignore .extra config file
+.extra
+
 # Compiled source #
 ###################
 *.com
