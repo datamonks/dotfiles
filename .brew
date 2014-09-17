@@ -85,8 +85,11 @@ installcask google-music-manager
 installcask growler
 # installcask imageoptim
 # installcask iterm2
+installcask intellij-idea
 installcask limechat
 installcask mesasqlite
+installcask pycharm
+installcask rubymine
 installcask sequel-pro
 installcask skitch
 installcask skype
