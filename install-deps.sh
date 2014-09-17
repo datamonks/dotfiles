@@ -17,7 +17,9 @@
 
 # rbenv install
 # http://blog.55minutes.com/2013/09/rails-os-x-install-guide/
-curl https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
+mkdir ~/.rbenv
+cd ~/.rbenv
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 # add bundler / rubygems-bundler as default gems in rbenv
 echo bundler >> ~/.rbenv/default-gems
 echo rubygems-bundler >> ~/.rbenv/default-gems

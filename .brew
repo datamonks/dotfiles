@@ -48,6 +48,7 @@ brew install mysql
 brew install node
 brew install pkg-config		#rbenv install
 brew install postgresql
+brew install ruby-build		#rbenv dep
 brew install sqlite
 brew install tree
 #brew install ack
