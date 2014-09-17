@@ -23,10 +23,10 @@ brew upgrade
 #brew install narwhal
 
 # Install more recent versions of some OS X tools
-#brew tap homebrew/dupes
-#brew install homebrew/dupes/grep
-#brew tap josegonzalez/homebrew-php
-#brew install php55
+brew tap homebrew/dupes
+brew install homebrew/dupes/grep
+brew tap josegonzalez/homebrew-php
+brew install php55
 
 # These two formulae didn’t work well last time I tried them:
 #brew install homebrew/dupes/vim
@@ -79,20 +79,20 @@ installcask cloudapp
 installcask dropbox
 installcask firefox
 installcask google-app-engine-launcher
-installcask google-chrome
+# installcask google-chrome
 installcask google-drive
 installcask google-music-manager
 installcask growler
-installcask imageoptim
-installcask iterm2
+# installcask imageoptim
+# installcask iterm2
 installcask limechat
 installcask mesasqlite
 installcask sequel-pro
 installcask skitch
 installcask skype
 installcask sublime-text
-installcask transmission
-installcask tvshows
+# installcask transmission
+# installcask tvshows
 installcask unrarx
 installcask virtualbox
 installcask vlc

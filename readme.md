@@ -80,12 +80,22 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 ./.osx
 ```
 
+Note:
+- Terminal option on line 507: adjust path acordingly
+
 ### 2. Install Homebrew formulae
 
 Homebrew requires Xcode Command Line Tools, install Xcode & CLT before installing Homebrew. To install Xcode CLT on Maverics run this command after Xcode has been installed `xcode-select --install`. Then install [Homebrew](http://brew.sh/). `~/.brew` includes installation of useful binaries (git, mercurial, etc) as well as native apps with [`brew cask`](https://github.com/phinze/homebrew-cask):
 
 ```bash
 ./.brew
+```
+
+Note:
+- to set mysql password after install run the following command
+
+```bash
+mysqladmin -u root password
 ```
 
 ### 3. Install dependencies
