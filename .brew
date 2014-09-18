@@ -41,6 +41,9 @@ brew install apple-gcc42	#rbenv install
 brew install awscli
 brew install autoconf		#rbenv install
 brew install git
+brew install libxml2		#rails env dep
+brew install libxslt		#rails env dep
+brew install libiconv		#rails env dep
 brew install mercurial
 brew install mysql
 # set mysql password after install with the following command (replace PASSWORD with your psw)
@@ -94,7 +97,11 @@ installcask rubymine
 installcask sequel-pro
 installcask skitch
 installcask skype
+installcask spectacle
+installcask splashtop-personal
+installcask splashtop-streamer
 installcask sublime-text
+installcask synergy
 # installcask transmission
 # installcask tvshows
 installcask unrarx
