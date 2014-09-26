@@ -61,3 +61,6 @@ fi
 
 # for homebrew
 export PATH="/usr/local/bin:$PATH"
+
+# Start mysql server
+mysql.server start
