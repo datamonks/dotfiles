@@ -4,6 +4,12 @@ export PATH="$HOME/bin:$PATH"
 # for php
 export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 
+# for java / apache derby
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
+export DERBY_INSTALL="/opt/Apache/derby-10.10.1.1"
+export CLASSPATH="$DERBY_INSTALL/lib/derby.jar:$DERBY_INSTALL/lib/derbytools.jar:."
+
 # for gem
 export PATH=~/.gem/bin:$PATH
 
@@ -63,4 +69,4 @@ fi
 export PATH="/usr/local/bin:$PATH"
 
 # Start mysql server
-mysql.server start
+# mysql.server start
