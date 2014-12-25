@@ -80,8 +80,7 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 ./.osx
 ```
 
-Note:
-- Terminal option on line 507: adjust path acordingly
+Note: I don't use this script anymore, use with caution.
 
 ### 2. Install Homebrew formulae
 
