@@ -1,4 +1,7 @@
-ource ~/.zsh/config.zsh
+# Set zsh as default shell
+chsh -s /bin/zsh
+
+source ~/.zsh/config.zsh
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
