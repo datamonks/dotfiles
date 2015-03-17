@@ -70,22 +70,10 @@ You could also use `~/.extra` to override settings, functions and aliases from m
 
 ## Setting up a new *mac*hine?
 
-Run the following 3 scripts before `boostrap.sh` when setting up a new Mac:
-
-### 1. Install dependencies
-
-Install other dependencies (unrelated to brew).  May consider combining all dependency installs into one file...
+The following is a script installs dependencies and other useful binaries.
 
 ```bash
-source install-deps.sh
-```
-
-### 2. Install Homebrew formulae
-
-`~/.brew` includes installation of useful binaries (git, mercurial, etc) as well as native apps with [`brew cask`](https://github.com/phinze/homebrew-cask):
-
-```bash
-./.brew
+source fresh-install.sh
 ```
 
 Note:
