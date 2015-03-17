@@ -1,28 +1,10 @@
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH"
-
-# for php
-export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
-
-# for java / apache derby
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home"
-export PATH="$JAVA_HOME/bin:$PATH"
-export DERBY_INSTALL="/opt/Apache/derby-10.10.1.1"
-export CLASSPATH="$DERBY_INSTALL/lib/derby.jar:$DERBY_INSTALL/lib/derbytools.jar:."
-
-# for gem
-export PATH=~/.gem/bin:$PATH
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{exports,path,bash_prompt,aliases,functions,extra}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
-
-# init z https://github.com/rupa/z
-# . ~/z/z.sh
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
@@ -52,21 +34,3 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-
-# http://stackoverflow.com/questions/13804382/how-to-automatically-run-bin-bash-login-automatically-in-the-embeded-termin
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# rbenv install
-# http://blog.55minutes.com/2013/09/rails-os-x-install-guide/
-export RBENV_ROOT="$HOME/.rbenv"
-
-if [ -d $RBENV_ROOT ]; then
-  export PATH="$RBENV_ROOT/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
-
-# for homebrew
-export PATH="/usr/local/bin:$PATH"
-
-# Start mysql server
-# mysql.server start

@@ -2,11 +2,11 @@
 
 This repo was forked and has since been modified to fit my needs.  See the "Thanks" section at the end of this readme for credits.
 
-## Installation
+## dotfiles Installation
 
 ### Using Git and the bootstrap script
 
-You can clone the repository wherever you want. (I like to keep it in `~/Projects/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
+The bootstrapper script will pull in the latest version and copy the files to your home folder.
 
 ```bash
 git clone https://github.com/kristinpeterson/dotfiles.git && cd dotfiles && source bootstrap.sh
@@ -29,14 +29,12 @@ set -- -f; source bootstrap.sh
 To install these dotfiles without Git:
 
 ```bash
-cd; curl -#L https://github.com/mathiasbynens/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh,LICENSE-MIT.txt}
+cd; curl -#L https://github.com/kristinpeterson/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh,LICENSE-MIT.txt}
 ```
-
-To update later on, just run that command again.
 
 ### Specify the `$PATH`
 
-If `~/.path` exists, it will be sourced along with the other files, before any feature testing (such as [detecting which version of `ls` is being used](https://github.com/mathiasbynens/dotfiles/blob/aff769fd75225d8f2e481185a71d5e05b76002dc/.aliases#L21-26)) takes place.
+If `~/.path` exists, it will be sourced along with the other files, before any feature testing takes place.
 
 Here’s an example `~/.path` file that adds `~/utils` to the `$PATH`:
 
@@ -68,23 +66,23 @@ echo 'remote1 = ssh://hg@bitbucket.org/kristinpeterson/repo1' >> ~/.hgrc
 echo 'remote2 = ssh://hg@bitbucket.org/kristinpeterson/repo2' >> ~/.hgrc
 ```
 
-You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/mathiasbynens/dotfiles/fork) instead, though.
+You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/kristinpeterson/dotfiles/fork) instead, though.
 
-## Run the following 3 scripts before `boostrap.sh` when setting up a new Mac
+## Setting up a new *mac*hine?
 
-### 1. Sensible OS X defaults
+Run the following 3 scripts before `boostrap.sh` when setting up a new Mac:
 
-When setting up a new Mac, you may want to set some sensible OS X defaults:
+### 1. Install dependencies
+
+Install other dependencies (unrelated to brew).  May consider combining all dependency installs into one file...
 
 ```bash
-./.osx
+source install-deps.sh
 ```
-
-Note: I don't use this script anymore, use with caution.
 
 ### 2. Install Homebrew formulae
 
-Homebrew requires Xcode Command Line Tools, install Xcode & CLT before installing Homebrew. To install Xcode CLT on Maverics run this command after Xcode has been installed `xcode-select --install`. Then install [Homebrew](http://brew.sh/). `~/.brew` includes installation of useful binaries (git, mercurial, etc) as well as native apps with [`brew cask`](https://github.com/phinze/homebrew-cask):
+`~/.brew` includes installation of useful binaries (git, mercurial, etc) as well as native apps with [`brew cask`](https://github.com/phinze/homebrew-cask):
 
 ```bash
 ./.brew
@@ -95,14 +93,6 @@ Note:
 
 ```bash
 mysqladmin -u root password
-```
-
-### 3. Install dependencies
-
-Install other dependencies (unrelated to brew).  May consider combining all dependency installs into one file...
-
-```bash
-source install-deps.sh
 ```
 
 ## Thanks to:

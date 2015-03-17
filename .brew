@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Install Xcode command line tools, a prerequisite for homebrew
+xcode-select --install
+
 # install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -9,69 +12,27 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
-# Install GNU core utilities (those that come with OS X are outdated)
-#brew install coreutils
-#echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-#brew install findutils
-# Install Bash 4
-#brew install bash
-
-# Install wget with IRI support
-#brew install wget --enable-iri
-
-# Install RingoJS and Narwhal
-# Note that the order in which these are installed is important; see http://git.io/brew-narwhal-ringo.
-#brew install ringojs
-#brew install narwhal
-
 # Install more recent versions of some OS X tools
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 brew tap josegonzalez/homebrew-php
 brew install php55
-
-# These two formulae didn’t work well last time I tried them:
-#brew install homebrew/dupes/vim
-#brew install homebrew/dupes/screen
-
-# Add homebrew/dupes to take advantage of homebrew packages that replace the Mac built-ins
-# brew install homebrew/dupes
-
-# Install other useful binaries
-
-brew install apple-gcc42	#rbenv install
+brew install apple-gcc42  #rbenv install
 brew install awscli
-brew install autoconf		#rbenv install
+brew install autoconf	    #rbenv install
 brew install git
 brew install heroku-toolbelt
-brew install libxml2		#rails env dep
-brew install libxslt		#rails env dep
-brew install libiconv		#rails env dep
+brew install libxml2		  #rails env dep
+brew install libxslt		  #rails env dep
+brew install libiconv     #rails env dep
 brew install mercurial
 brew install mysql
-# set mysql password after install with the following command (replace PASSWORD with your psw)
-# $(brew --prefix mysql)/bin/mysqladmin -u root PASSWORD
 brew install node
 brew install pkg-config		#rbenv install
 brew install postgresql
 brew install ruby-build		#rbenv dep
 brew install sqlite
 brew install tree
-#brew install ack
-#brew install exiv2
-#brew install imagemagick
-#brew install lynx
-#brew install pigz
-#brew install rename
-#brew install rhino
-#brew install webkit2png
-#brew install zopfli
-
-#brew tap homebrew/versions
-#brew install lua52
-
-# Install native apps
 
 # Install Homebrew Cask https://github.com/phinze/homebrew-cask
 brew tap phinze/homebrew-cask
@@ -87,15 +48,12 @@ installcask cloudapp
 installcask dropbox
 installcask firefox
 installcask google-app-engine-launcher
-# installcask google-chrome
+installcask google-chrome
 installcask google-drive
 installcask google-music-manager
 installcask growler
-# installcask imageoptim
-# installcask iterm2
 installcask intellij-idea
 installcask limechat
-installcask mesasqlite
 installcask pycharm
 installcask rubymine
 installcask sequel-pro
@@ -106,18 +64,8 @@ installcask splashtop-personal
 installcask splashtop-streamer
 installcask sublime-text
 installcask synergy
-# installcask transmission
-# installcask tvshows
 installcask unrarx
-installcask virtualbox
 installcask vlc
-#installcask google-chrome-canary
-#installcask ukelele
-#installcask the-unarchiver
-#installcask tor-browser
-#installcask macvim
-#installcask miro-video-converter
-#installcask imagealpha
 
 sudo npm install --global gulp
 

@@ -1,3 +1,12 @@
+" Pathogen https://github.com/tpope/vim-pathogen
+execute pathogen#infect()
+" NERDTree {
+  let NERDTreeShowLineNumbers=1
+  let NERDTreeMinimalUI=1
+  let NERDTreeShowHidden=1
+  let NERDTreeIgnore=['\.git$', '\.DS_Store$', '\.svn$', '\.bundle$', '\.sass-cache$']
+  let NERDTreeWinSize = 40
+" }
 " Make Vim more useful
 set nocompatible
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
@@ -68,10 +77,10 @@ set title
 " Show the (partial) command as it’s being typed
 set showcmd
 " Use relative line numbers
-if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
-endif
+" if exists("&relativenumber")
+" 	set relativenumber
+" 	au BufReadPost * set relativenumber
+" endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
