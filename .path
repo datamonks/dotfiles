@@ -16,6 +16,9 @@ export PATH=~/.gem/bin:$PATH
 # for homebrew
 export PATH="/usr/local/bin:$PATH"
 
+# for php-fpm
+export PATH="/usr/local/sbin:$PATH"
+
 # rbenv
 if [ -d $RBENV_ROOT ]; then
   export PATH="$RBENV_ROOT/bin:$PATH"
