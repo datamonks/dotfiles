@@ -18,6 +18,16 @@ mkdir -p ~/Library/LaunchAgents
 ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
+# Install a non-system version of ruby (change version as needed)
+# Note: this is necesary before installation of gems
+rbenv install 2.2.2
+
+# set newly installed ruby as global version in rbenv
+rbenv global 2.2.2
+
+# rehash rbenv shims (after install of new ruby version above)
+rbenv rehash
+
 # Check gems are up to date without installing documentation
 gem update --system --no-document
 # Install jekyll
@@ -56,6 +66,9 @@ fi
 # Install Xcode command line tools, a prerequisite for homebrew
 xcode-select --install
 
+# Change Xcode active directory
+sudo xcode-select -switch /Library/Developer/CommandLineTools
+
 # install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -70,20 +83,23 @@ brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 brew tap josegonzalez/homebrew-php
 brew install php55
-brew install apple-gcc42  #rbenv install
+brew install apple-gcc42    #rbenv install
 brew install awscli
-brew install autoconf     #rbenv install
+brew install autoconf       #rbenv install
+brew install elasticsearch
 brew install git
 brew install heroku-toolbelt
-brew install libxml2      #rails env dep
-brew install libxslt      #rails env dep
-brew install libiconv     #rails env dep
+brew install libxml2        #rails env dep
+brew install libxslt        #rails env dep
+brew install libiconv       #rails env dep
 brew install mercurial
 brew install mysql
 brew install node
-brew install pkg-config   #rbenv install
+brew install pkg-config     #rbenv install
 brew install postgresql
-brew install ruby-build   #rbenv dep
+brew install python	        #in lieu of system version		
+brew install redis
+brew install ruby-build     #rbenv dep
 brew install sqlite
 brew install tree
 brew install zsh
@@ -121,7 +137,28 @@ installcask synergy
 installcask unrarx
 installcask vlc
 
-sudo npm install --global gulp
-
 # Remove outdated versions from the cellar
 brew cleanup
+
+# npm:
+# create .npm dir & ensure permissions are granted to curr user
+mkdir ~/.npm
+sudo chown -R $(whoami) ~/.npm
+# npm package installs
+npm install --global gulp
+npm install -g less
+
+# python:
+# upgrade pip
+pip install --upgrade pip setuptools
+pip install supervisor
+
+# Handle php55 warnings:
+# If PEAR complains about permissions, 'fix' the default PEAR permissions and config:
+chmod -R ug+w /usr/local/Cellar/php55/5.5.23/lib/php
+pear config-set php_ini /usr/local/etc/php/5.5/php.ini system
+
+# To launch php-fpm on startup:
+mkdir -p ~/Library/LaunchAgents
+cp /usr/local/opt/php55/homebrew.mxcl.php55.plist ~/Library/LaunchAgents/
+launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist
